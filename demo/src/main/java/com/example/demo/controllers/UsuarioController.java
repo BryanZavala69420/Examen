@@ -47,7 +47,7 @@ public class UsuarioController {
 
     }
 
-    @PostMapping("/create")
+    @PostMapping("/insertar")
     public Optional<Usuario> InsertarProducto(@RequestBody Usuario usuario){
         Optional<Usuario> NuevoProductoSexo = usuarioServicelmpl.InsertarProducto(usuario);
         if(NuevoProductoSexo.isPresent()){
