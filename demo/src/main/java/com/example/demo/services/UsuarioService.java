@@ -18,9 +18,13 @@ import com.example.demo.dto.Usuario;
 public interface UsuarioService {
 
         List<Usuario> GetAllProductos();
+
         Optional<Usuario> ObtenerProductosID(Long id);
+
         Optional<Usuario> InsertarProducto(Usuario Usuario);
+
         Optional<Usuario> ActualizarProducto(Long id, Usuario Usuario);
+        
         void BorrarProducto(Long id);
 
 
