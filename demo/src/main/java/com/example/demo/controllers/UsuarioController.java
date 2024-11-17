@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -67,6 +68,14 @@ public class UsuarioController {
     public Usuario ActualizarProducto(@PathVariable(name = "id") Long id, @RequestBody Usuario usuario) {
         return usuarioServicelmpl.ActualizarProducto(id, usuario)
                 .orElseThrow(() -> new RuntimeException("No se pudo actualizar el producto con ID: " + id));
+
+    }
+
+    @DeleteMapping("borrate/{id}")
+    public void BorrarProducto(@PathVariable(name="id") Long id){
+        usuarioServicelmpl.BorrarProducto(id);
+
+
     }
     
 
